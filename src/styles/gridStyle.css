@@ -1,0 +1,18 @@
+img{
+    max-width: 100px;
+}
+
+.title{
+    font-size: 15px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+  }
+
+  .product{
+      text-align: center;
+      margin-bottom: 20px;
+
+  }
