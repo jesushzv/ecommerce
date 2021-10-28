@@ -13,9 +13,8 @@ const Home = () => {
 
   return (
     <>
-      <h1>Store</h1>
 
-      <ProductsGrid products={items} />
+      <ProductsGrid className="container products-grid" products={items} />
     </>
   );
 };

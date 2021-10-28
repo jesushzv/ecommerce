@@ -1,0 +1,7 @@
+.color{
+    color:white !important;
+}
+
+.color:hover{
+    color: rgb(182, 179, 179) !important;
+}

@@ -7,11 +7,18 @@ const ProductsGrid = (props) => {
 
       {
         props.products.map(product=>{
-          return <div className="product">
+          return <div className="product container">
 
 
-            <h2 className="title">{product.product_name}</h2>
             <img src={product.image} alt="" />
+            <h2 className="title">{product.product_name}</h2>
+
+            <div className="d-flex justify-content-center align-items-center">
+
+            <p className="price align-items-center">${product.price}</p>
+            <button className="add">Add to Cart</button>
+
+            </div>
 
 
           </div>

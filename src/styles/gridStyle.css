@@ -1,18 +1,35 @@
 img{
+    width: 100px;
     max-width: 100px;
+    height: 100px;
+    max-height: 100px;
 }
 
 .title{
-    font-size: 15px;
+    margin-top:10px;
+    font-size: 10px;
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(3,1fr);
+    margin-top: 15px;
   }
 
   .product{
       text-align: center;
       margin-bottom: 20px;
 
+  }
+
+  .add{
+      height: 18px;
+      font-size: 9px;
+      margin: 5px;
+  }
+
+  .price{
+      font-size: 10px;
+      font-weight: bold;
+      margin: 5px;
   }
