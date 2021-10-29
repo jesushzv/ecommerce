@@ -3,12 +3,12 @@ import '../styles/gridStyle.css'
 
 const ProductsGrid = (props) => {
 
+
   return <div className="grid-container">
 
       {
         props.products.map(product=>{
           return <div className="product container">
-
 
             <img src={product.image} alt="" />
             <h2 className="title">{product.product_name}</h2>
