@@ -1,8 +1,13 @@
 .cart-container{
-    margin-left: 25%;
-    margin-right: 25%;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 .product > *{
     margin: 10px;
+}
+
+.buttons-final > *{
+    margin:5px;
+    margin-bottom: 20px;
 }

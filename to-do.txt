@@ -1,1 +1,4 @@
 - Placeholder image for image not available
+- login page logic
+- sign up page logic
+- style for every item

@@ -4,7 +4,7 @@ import "../styles/cartStyle.css"
 
 const Cart = () => {
 
-  const [plus,minus] = useUpdateCart();
+  const [plus,minus,add,reset,remove] = useUpdateCart();
   const [total,setTotal] = useState(0);
 
 
@@ -39,11 +39,18 @@ const Cart = () => {
 
               <p> <strong> Total: </strong> ${item.qty * item.price}</p>
 
+              <button onClick={()=>remove(item.name)}>Remove</button>
+
             </div>
         );
       })}
 
       <h1>Your total is: ${total}</h1>
+
+      <div className="buttons-final">
+        <button>Checkout</button>
+        <button onClick={()=>reset()}>Clear</button>
+      </div>
 
     </div>
   );
