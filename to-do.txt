@@ -1,7 +1,15 @@
 - Placeholder image for image not available
-- login page logic
-- sign up page logic
 - style for every item
 - cart svg with number of items in cart
 - mock checkout process
 - Products searchbar
+- show and hide password
+- animation for when a user adds item (pop up)
+- Redirect user to home when they log in
+- Redirect user to home when they sign up
+- Redirect user to home when they log out
+- Redirect user to log in when they checkout and are not logged in
+- JWT secure session
+- Add user name in navbar when logged in
+- If user is already logged in, dont let them log in again, show a logout page
+- If user is already logged in, dont let them sign up again, show a logout page

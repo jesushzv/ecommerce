@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/signUpStyle.css";
+import {Alert} from 'react-bootstrap';
 
 const SignUp = () => {
   const [user, setUser] = useState({
@@ -9,6 +10,11 @@ const SignUp = () => {
     email: "",
     password: "",
   });
+
+  const [error, setError] = useState({
+    active: false,
+    message: "",
+  })
   
   const [confirmPassword, setConfirmPassword] = useState("");
 
@@ -85,7 +91,7 @@ const SignUp = () => {
             />
             <input
               onChange={(e) => handleChange(e.target.id, e.target.value)}
-              type="text"
+              type="password"
               id="password"
               className="fadeIn third"
               name="login"
@@ -94,7 +100,7 @@ const SignUp = () => {
             />
             <input
               onChange={(e) => setConfirmPassword(e.target.value)}
-              type="text"
+              type="password"
               id="confirm-password"
               className="fadeIn third"
               name="login"
@@ -102,6 +108,19 @@ const SignUp = () => {
               required
             />
             <input type="submit" className="fadeIn fourth" value="Sign Up" />
+
+
+            {error.active && (
+             
+             <Alert variant="danger" onClose={() => setError({active:false,message:""})} dismissible>
+        <Alert.Heading>{error.message}</Alert.Heading>
+        
+      </Alert>
+
+
+            )}
+
+
           </form>
         </div>
       </div>

@@ -1,31 +1,103 @@
-import React from 'react';
-import '../styles/loginStyle.css'
+import React, { useState } from "react";
+import "../styles/loginStyle.css";
+import {Alert} from 'react-bootstrap'
 
 const Login = () => {
-    return <>
-    <h1>Login</h1>
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
 
-    <div className="wrapper fadeInDown">
-  <div id="formContent">
+  const [error, setError] = useState({
+    active: false,
+    message: "",
+  })
 
-    <div className="fadeIn first">
-    </div>
+  const handleChange = (e) => {
+    setUser({
+      ...user,
+      [e.target.name]: e.target.value,
+    });
+  };
 
-    <form>
-      <input type="text" id="login" className="fadeIn second" name="login" placeholder="Email" required/>
-      <input type="text" id="password" className="fadeIn third" name="login" placeholder="Password" required/>
-      <input type="submit" className="fadeIn fourth" value="Log In"/>
-    </form>
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-    <div id="formFooter">
-      <a className="underlineHover" href="#">Forgot Password?</a>
-    </div>
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(user),
+    };
 
-  </div>
-</div>
+    fetch("https://ecomerce-master.herokuapp.com/api/v1/login", requestOptions)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.error) {
+          setError({
+            active: true,
+            message: data.message,
+          });
+        } else {
+          localStorage.setItem("token", data.token);
+          window.location.href = "/";
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+     
+  };
+
+  return (
+    <>
+      <h1>Login</h1>
+
+      <div className="wrapper fadeInDown">
+        <div id="formContent">
+          <div className="fadeIn first"></div>
+
+          <form onSubmit={(e) => handleSubmit(e)}>
+            <input
+              onChange={(e) => handleChange(e)}
+              type="email"
+              id="login"
+              className="fadeIn second"
+              name="email"
+              placeholder="Email"
+              required
+            />
+            <input
+              onChange={(e) => handleChange(e)}
+              type="password"
+              id="password"
+              className="fadeIn third"
+              name="password"
+              placeholder="Password"
+              required
+            />
+            <input type="submit" className="fadeIn fourth" value="Log In" />
+
+            {error.active && (
+             
+             <Alert variant="danger" onClose={() => setError({active:false,message:""})} dismissible>
+        <Alert.Heading>{error.message}</Alert.Heading>
+        
+      </Alert>
 
 
+            )}
+
+          </form>
+
+          <div id="formFooter">
+            <a className="underlineHover" href="#">
+              Forgot Password?
+            </a>
+          </div>
+        </div>
+      </div>
     </>
-}
+  );
+};
 
-export default Login
+export default Login;
