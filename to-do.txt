@@ -2,3 +2,6 @@
 - login page logic
 - sign up page logic
 - style for every item
+- cart svg with number of items in cart
+- mock checkout process
+- Products searchbar

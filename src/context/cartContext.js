@@ -12,7 +12,7 @@ export function useUpdateCart(){
 }
 
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([{name: "Gloves", qty: 1, price: 10},{name: "Shoes", qty: 1, price: 20}]);
+  const [cart, setCart] = useState([]);
 
   const updateCartPlus = (name)=>{
     setCart(cart.map(item => {
