@@ -4,7 +4,7 @@ import "../styles/cartStyle.css"
 
 const Cart = () => {
 
-  const [plus,minus,add,reset,remove] = useUpdateCart();
+  const [plus,minus,,reset,remove] = useUpdateCart();
   const [total,setTotal] = useState(0);
 
 

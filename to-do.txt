@@ -1,10 +1,8 @@
 - Placeholder image for image not available
-- style for every item
 - cart svg with number of items in cart
 - mock checkout process
 - Products searchbar
-- show and hide password
-- animation for when a user adds item (pop up)
+- show and hide password toggle
 - Redirect user to home when they log in
 - Redirect user to home when they sign up
 - Redirect user to home when they log out
@@ -13,3 +11,7 @@
 - Add user name in navbar when logged in
 - If user is already logged in, dont let them log in again, show a logout page
 - If user is already logged in, dont let them sign up again, show a logout page
+- Description for every item
+- Bring to top button
+- Sort by category
+- Only make one api call to get all products

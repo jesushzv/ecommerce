@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../styles/loginStyle.css";
 import {Alert} from 'react-bootstrap'
+import { login } from "../constants";
 
 const Login = () => {
   const [user, setUser] = useState({
@@ -29,7 +30,7 @@ const Login = () => {
       body: JSON.stringify(user),
     };
 
-    fetch("https://ecomerce-master.herokuapp.com/api/v1/login", requestOptions)
+    fetch(login, requestOptions)
       .then((response) => response.json())
       .then((data) => {
         if (data.error) {

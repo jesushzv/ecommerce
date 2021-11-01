@@ -4,7 +4,13 @@ import '../styles/gridStyle.css'
 
 const ProductsGrid = (props) => {
 
-  const [plus,minus,add] = useUpdateCart();
+  const [,,add] = useUpdateCart();
+
+  const handleClick = (productname,price) =>{
+    add(productname,price);
+    props.alert(productname)
+  }
+
 
   return <div className="grid-container">
 
@@ -12,13 +18,20 @@ const ProductsGrid = (props) => {
         props.products.map(product=>{
           return <div className="d-flex flex-column justify-content-center align-items-center product container">
 
+
+            <div className="style d-flex flex-column justify-content-center align-items-center product">
+
+
+
             <img src={product.image} alt="" />
             <h2 className="title">{product.product_name}</h2>
 
-            <div className="d-flex justify-content-center align-items-center">
+            <div className="d-flex justify-content-center align-items-center line">
 
             <p className="price align-items-center">${product.price}</p>
-            <button onClick={()=> add(product.product_name,product.price) } className="add">Add to Cart</button>
+            <button onClick={()=> handleClick(product.product_name,product.price)} className="add">Add to Cart</button>
+              </div>
+
 
             </div>
 

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { signup } from "../constants";
 import "../styles/signUpStyle.css";
 import {Alert} from 'react-bootstrap';
 
@@ -39,7 +40,7 @@ const SignUp = () => {
       body: JSON.stringify(user),
     };
 
-    fetch("https://ecomerce-master.herokuapp.com/api/v1/signup", requestOptions)
+    fetch(signup, requestOptions)
       .then((response) => response.json())
       .then((data) => console.log(data));
   };
