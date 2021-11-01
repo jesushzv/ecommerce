@@ -1,6 +1,6 @@
 .cart-container{
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .product > *{
@@ -10,4 +10,10 @@
 .buttons-final > *{
     margin:5px;
     margin-bottom: 20px;
+}
+
+.remove{
+    font-size: 15px;
+    width: 100%;
+    max-width: 70px; 
 }

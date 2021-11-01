@@ -30,7 +30,7 @@ const Cart = () => {
               <p>{item.name}</p>
               <p>{item.qty}</p>
 
-              <div className="buttons">
+              <div className="buttons d-flex">
                 <button onClick={()=>plus(item.name)}>+</button>
                 <button onClick={()=>minus(item.name)}>-</button>
               </div>
@@ -39,7 +39,7 @@ const Cart = () => {
 
               <p> <strong> Total: </strong> ${item.qty * item.price}</p>
 
-              <button onClick={()=>remove(item.name)}>Remove</button>
+              <button className="remove" onClick={()=>remove(item.name)}>Remove</button>
 
             </div>
         );

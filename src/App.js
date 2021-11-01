@@ -6,7 +6,7 @@ import Login from './pages/login'
 import SignUp from './pages/signup'
 import Cart from './pages/cart'
 import NavBar from './components/Navbar';
-import { ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import {CartProvider} from './context/cartContext';
 
@@ -21,7 +21,6 @@ function App() {
     <Router>
 
       <NavBar />
-      <ToastContainer />
 
       <Switch>
         <Route exact path="/">
