@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import "../styles/loginStyle.css";
 import {Alert} from 'react-bootstrap'
-import { login } from "../constants";
+import { login, getUserMe } from "../constants";
+import { useUpdateUserContext,useUserContext } from "../context/userContext";
+import { useHistory } from "react-router";
+import { ToastContainer, toast } from "react-toastify";
+
 
 const Login = () => {
   const [user, setUser] = useState({
@@ -13,6 +17,17 @@ const Login = () => {
     active: false,
     message: "",
   })
+
+  const updateUser = useUpdateUserContext();
+  const history = useHistory();
+  
+  const notify = (name) =>
+    toast(`Welcome ${name}!`, {
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: true,
+    });
+
 
   const handleChange = (e) => {
     setUser({
@@ -39,10 +54,35 @@ const Login = () => {
             message: data.message,
           });
         } else {
-          localStorage.setItem("token", data.token);
-          window.location.href = "/";
+
+          const token = data.token;
+
+          var myHeaders = new Headers();
+          myHeaders.append("Authorization", `JWT ${token}`);
+
+          const requestOptions = {
+            method: "GET",
+            headers: myHeaders,
+          };
+
+
+          fetch(getUserMe, requestOptions)
+            .then((response) => response.json())
+            .then((data) => {
+              updateUser(data);
+              notify(data.user.first_name);
+              
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+            ;
+
+          }
+          
+
         }
-      })
+      )
       .catch((error) => {
         console.log(error);
       });
@@ -97,6 +137,8 @@ const Login = () => {
           </div>
         </div>
       </div>
+
+      <ToastContainer />
     </>
   );
 };

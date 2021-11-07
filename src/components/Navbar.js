@@ -1,8 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/navBarStyle.css";
+import AutocompleteSearchbar from "./AutocompleteSearchbar";
 
-const NavBar = () => {
+
+const NavBar = (props) => {
+
+  var items = props.items;
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark static-top">
       <div class="container">
@@ -10,7 +15,7 @@ const NavBar = () => {
           <h1>JHStore</h1>
         </Link>
 
-        <div className="links d-flex">
+        <div className="links d-flex align-items-center">
           <Link className="nav-link active color" aria-current="page" to="/">
             Home
           </Link>
@@ -25,9 +30,14 @@ const NavBar = () => {
 
           <Link className="nav-link color" to="/cart">
             Cart
-            </Link>
+          </Link>
+
+          <AutocompleteSearchbar items={items} />
 
         </div>
+
+         
+
       </div>
     </nav>
   );

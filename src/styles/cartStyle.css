@@ -1,19 +1,19 @@
-.cart-container{
-    margin-left: 10%;
-    margin-right: 10%;
+.cart-container {
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
-.product > *{
-    margin: 5%;
+.product > * {
+  margin: 5%;
 }
 
-.buttons-final > *{
-    margin:5px;
-    margin-bottom: 20px;
+.buttons-final > * {
+  margin: 5px;
+  margin-bottom: 20px;
 }
 
-.remove{
-    font-size: 15px;
-    width: 100%;
-    max-width: 70px; 
+.remove {
+  font-size: 15px;
+  width: 100%;
+  max-width: 70px;
 }

@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ProductsGrid from "../components/ProductsGrid";
-import * as Constants from "../constants";
 import { ToastContainer, toast } from "react-toastify";
+import SearchBar from "../components/SearchBar";
 
-const Home = () => {
-  const [items, setItems] = useState([]);
+const Home = (props) => {
+  const [items, setItems] = useState(props.items);
+  const [searchTerm, setSearchTerm] = useState("");
   const notify = (item) =>
     toast(`${item} added to cart`, {
       autoClose: 5000,
@@ -12,18 +13,15 @@ const Home = () => {
       closeOnClick: true,
     });
 
-  useEffect(() => {
-    fetch(Constants.itemsAPI)
-      .then((response) => response.json())
-      .then((e) => setItems(e));
-  }, []);
 
   return (
     <>
+    <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <ProductsGrid
         className="container products-grid"
         alert={notify}
         products={items}
+        searchTerm={searchTerm}
       />
 
       <ToastContainer />

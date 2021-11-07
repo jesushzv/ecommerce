@@ -5,3 +5,8 @@
 .color:hover{
     color: rgb(182, 179, 179) !important;
 }
+
+.search-nav{
+    max-width: 25%;
+    height: auto;
+}
