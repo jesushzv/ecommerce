@@ -4,7 +4,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+[![MIT License][license-shield]]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
@@ -69,8 +69,6 @@ This project was built for educational purposes (as a part of [DEV.F](https://ww
 
 
 ### Built With
-
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 * [React.js](https://reactjs.org/)
 * [Bootstrap](https://getbootstrap.com)
