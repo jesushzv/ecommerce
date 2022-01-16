@@ -4,7 +4,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]]
+[![MIT License]][license-shield]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
@@ -59,8 +59,6 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 This project was built for educational purposes (as a part of [DEV.F](https://www.devf.la)'s Software Development Bootcamp Curriculum). It incorporates various concepts as: Front-End Development, Web Design, React (with hooks, bootstrap, dom, routers and scripts), REST API, etc. All together forming a complete business solution.
 
